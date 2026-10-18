@@ -1,8 +1,7 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CheckCircle2, Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { CONTACT_EMAIL, INFO_EMAIL, SERVICE_OPTIONS as services } from '../data/contact'
-import { trackLead } from '../lib/analytics'
+import { useLeadForm } from '../lib/useLeadForm'
 
 const details = [
   { ic: Mail, h: 'General Inquiries', p: INFO_EMAIL, href: `mailto:${INFO_EMAIL}` },
@@ -15,11 +14,8 @@ const details = [
 ]
 
 export default function Contact() {
-  const [sent, setSent] = useState(false)
-  const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
-
-  const onChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
-  const onSubmit = e => { e.preventDefault(); trackLead('contact', { service: form.service }); setSent(true) }
+  const { form, onChange, onSubmit, sending, sent, error, honeypotField } =
+    useLeadForm('contact', { name: '', email: '', phone: '', service: '', message: '' })
 
   return (
     <>
@@ -49,9 +45,10 @@ export default function Contact() {
             <div className="form-card">
               <h2 className="form-title">Send Us a Message</h2>
               {sent ? (
-                <p className="success-msg"><CheckCircle2 size={18} strokeWidth={1.75} /> Thanks! We'll be in touch within one business day.</p>
+                <p className="success-msg" role="status"><CheckCircle2 size={18} strokeWidth={1.75} /> Thanks! We'll be in touch within one business day.</p>
               ) : (
                 <form onSubmit={onSubmit}>
+                  <div {...honeypotField.wrapperProps}><input {...honeypotField.inputProps} /></div>
                   <div className="fld">
                     <input name="name" value={form.name} onChange={onChange} placeholder="Your Name*" required />
                   </div>
@@ -72,10 +69,11 @@ export default function Contact() {
                   </div>
                   <p className="agree">By submitting you agree to our <Link to="/privacy">Privacy Policy</Link>.</p>
                   <div className="submit">
-                    <button type="submit" className="btn" style={{ width: '100%', justifyContent: 'center' }}>
-                      Send Message →
+                    <button type="submit" className="btn" disabled={sending} style={{ width: '100%', justifyContent: 'center' }}>
+                      {sending ? 'Sending…' : 'Send Message →'}
                     </button>
                   </div>
+                  {error && <p className="form-error" role="alert">{error}</p>}
                 </form>
               )}
             </div>

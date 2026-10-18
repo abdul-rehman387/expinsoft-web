@@ -1,15 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { CheckCircle2, X } from 'lucide-react'
 import { SERVICE_OPTIONS as services } from '../data/contact'
-import { trackLead } from '../lib/analytics'
+import { useLeadForm } from '../lib/useLeadForm'
 
 export default function QuoteModal({ onClose }) {
-  const [sent, setSent] = useState(false)
-  const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
-
-  const onChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
-  const onSubmit = e => { e.preventDefault(); trackLead('quote', { service: form.service }); setSent(true) }
+  const { form, onChange, onSubmit, sending, sent, error, honeypotField } =
+    useLeadForm('quote', { name: '', email: '', phone: '', service: '', message: '' })
 
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose() }
@@ -28,9 +25,10 @@ export default function QuoteModal({ onClose }) {
         <h3>Get a Free Quote</h3>
         <p className="sub">Tell us about your project and the service you need - we'll reply within 24 hours.</p>
         {sent ? (
-          <p className="success-msg"><CheckCircle2 size={18} strokeWidth={1.75} /> Thanks! We'll be in touch shortly with your quote.</p>
+          <p className="success-msg" role="status"><CheckCircle2 size={18} strokeWidth={1.75} /> Thanks! We'll be in touch shortly with your quote.</p>
         ) : (
           <form onSubmit={onSubmit}>
+            <div {...honeypotField.wrapperProps}><input {...honeypotField.inputProps} /></div>
             <div className="fld">
               <input name="name" value={form.name} onChange={onChange} placeholder="Your Name*" required />
             </div>
@@ -51,10 +49,11 @@ export default function QuoteModal({ onClose }) {
             </div>
             <p className="agree">By submitting you agree to our <Link to="/privacy" onClick={onClose}>Privacy Policy</Link>.</p>
             <div className="submit">
-              <button type="submit" className="btn" style={{ width: '100%', justifyContent: 'center' }}>
-                Get My Free Quote →
+              <button type="submit" className="btn" disabled={sending} style={{ width: '100%', justifyContent: 'center' }}>
+                {sending ? 'Sending…' : 'Get My Free Quote →'}
               </button>
             </div>
+            {error && <p className="form-error" role="alert">{error}</p>}
           </form>
         )}
       </div>

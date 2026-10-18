@@ -32,3 +32,5 @@ seo-reports/
 
 # Firebase CLI cache
 .firebase/
+# Non-secret Cloud Functions settings (SMTP host/port/user, recipient). The password is in Secret Manager.
+!functions/.env

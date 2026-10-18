@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import digitalServicesImg from '../assets/Digital-Services.webp'
 import { industries } from '../data/industries'
 import { blogPosts } from '../data/blogPosts'
-import { trackLead } from '../lib/analytics'
+import { useLeadForm } from '../lib/useLeadForm'
 import { CONTACT_EMAIL, INFO_EMAIL } from '../data/contact'
 import { ArrowRight, Bot, ChartLine, CheckCircle2, Mail, MapPin, MessageSquare, Phone, RefreshCw, Target, Timer, Workflow } from 'lucide-react'
 
@@ -85,10 +85,8 @@ const aiFeats = [
 export default function Home() {
   const [caseTab, setCaseTab] = useState(0)
   const [insTab, setInsTab] = useState('All')
-  const [formSent, setFormSent] = useState(false)
-  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' })
-  const onChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
-  const onSubmit = e => { e.preventDefault(); trackLead('home'); setFormSent(true) }
+  const { form, onChange, onSubmit, sending, sent: formSent, error, honeypotField } =
+    useLeadForm('home', { name: '', email: '', phone: '', message: '' })
 
   return (
     <>
@@ -381,18 +379,20 @@ export default function Home() {
             <div>
               {formSent ? (
                 <div className="form-card">
-                  <p className="success-msg" style={{ fontSize: 18, padding: '40px 0' }}><CheckCircle2 size={22} strokeWidth={1.75} /> Thanks! We'll reach out within 24 hours.</p>
+                  <p className="success-msg" role="status" style={{ fontSize: 18, padding: '40px 0' }}><CheckCircle2 size={22} strokeWidth={1.75} /> Thanks! We'll reach out within 24 hours.</p>
                 </div>
               ) : (
                 <div className="form-card">
                   <h3>Start the Conversation</h3>
                   <form onSubmit={onSubmit}>
+                    <div {...honeypotField.wrapperProps}><input {...honeypotField.inputProps} /></div>
                     <div className="fld"><input name="name" value={form.name} onChange={onChange} placeholder="Your Name*" required /></div>
                     <div className="fld"><input name="email" type="email" value={form.email} onChange={onChange} placeholder="Email Address*" required /></div>
                     <div className="fld"><input name="phone" value={form.phone} onChange={onChange} placeholder="Phone Number" /></div>
                     <div className="fld"><textarea name="message" value={form.message} onChange={onChange} placeholder="Describe your project…" rows={4} /></div>
                     <p className="agree">By submitting you agree to our <Link to="/privacy">Privacy Policy</Link>.</p>
-                    <div className="submit"><button type="submit" className="btn" style={{ width: '100%', justifyContent: 'center' }}>Send Message →</button></div>
+                    <div className="submit"><button type="submit" className="btn" disabled={sending} style={{ width: '100%', justifyContent: 'center' }}>{sending ? 'Sending…' : 'Send Message →'}</button></div>
+                    {error && <p className="form-error" role="alert">{error}</p>}
                   </form>
                 </div>
               )}
