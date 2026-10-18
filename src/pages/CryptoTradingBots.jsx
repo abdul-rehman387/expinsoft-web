@@ -125,7 +125,7 @@ export default function CryptoTradingBots() {
               <Link to="/portfolio" className="btn" style={{ marginTop: 20 }}>View Our Work →</Link>
             </div>
             <div className="pf-img">
-              <img src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=700&q=80" alt="Crypto trading dashboard" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=700&q=80&auto=format" alt="Crypto trading dashboard" loading="lazy" />
             </div>
           </div>
           <p style={{ fontSize: 12.5, color: 'var(--slate)', maxWidth: 820, margin: '0 auto', textAlign: 'center' }}>
@@ -161,7 +161,7 @@ export default function CryptoTradingBots() {
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>Book a Free Strategy Review</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="Team" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>

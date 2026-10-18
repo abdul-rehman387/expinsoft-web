@@ -3,7 +3,8 @@ import { useSearchParams, Link } from 'react-router-dom'
 import { Elements } from '@stripe/react-stripe-js'
 import { stripePromise, stripeEnabled } from '../lib/stripe'
 import StripeCardForm from '../components/StripeCardForm'
-import PayPalCheckoutButton, { paypalEnabled } from '../components/PayPalCheckoutButton'
+import PayPalCheckoutButton from '../components/PayPalCheckoutButton'
+import { paypalEnabled } from '../lib/paypal'
 import { CheckCircle2, CreditCard } from 'lucide-react'
 
 const planFeatures = {

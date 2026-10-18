@@ -29,7 +29,7 @@ export default function Insights() {
                 <span className="cur">Insights</span>
               </p>
               <p className="eyebrow orange" style={{ marginBottom: 14 }}>Blog & Insights</p>
-              <h1>Ideas Worth Reading</h1>
+              <h1>Software Development Blog &amp; Insights</h1>
               <p className="lead">
                 Practical, engineering-led perspectives on mobile, AI, cloud, and software strategy -
                 written by the team that ships the projects, not a marketing desk.
@@ -55,7 +55,7 @@ export default function Insights() {
               <Link to="/" className="btn">Read Full Report</Link>
             </div>
             <div className="case-img">
-              <img src={`https://images.unsplash.com/photo-${featured.img}?w=700&q=80`} alt={featured.h} loading="lazy" />
+              <img src={`https://images.unsplash.com/photo-${featured.img}?w=700&q=80&auto=format`} alt="" loading="lazy" />
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function Insights() {
             {filtered.map(b => (
               <div key={b.slug} className="blog">
                 <div className="img">
-                  <img src={`https://images.unsplash.com/photo-${b.img}?w=600&q=80`} alt={b.h} loading="lazy" />
+                  <img src={`https://images.unsplash.com/photo-${b.img}?w=600&q=80&auto=format`} alt="" loading="lazy" />
                 </div>
                 <div className="bd">
                   <span className="blog-meta">{b.topic} · {b.readTime}</span>
@@ -101,7 +101,7 @@ export default function Insights() {
               <Link to="/" className="btn" style={{ background: 'var(--orange)' }}>Subscribe to the Newsletter</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="Team" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>

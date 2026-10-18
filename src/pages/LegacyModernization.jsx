@@ -125,7 +125,7 @@ export default function LegacyModernization() {
               <Link to="/portfolio" className="btn" style={{ marginTop: 20 }}>View Case Study →</Link>
             </div>
             <div className="pf-img">
-              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&q=80" alt="Legacy system modernization" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&q=80&auto=format" alt="Legacy system modernization" loading="lazy" />
             </div>
           </div>
         </div>
@@ -157,7 +157,7 @@ export default function LegacyModernization() {
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>Book a Free Consultation</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=800&q=80" alt="Server infrastructure" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=800&q=80&auto=format" alt="Server infrastructure" loading="lazy" />
             </div>
           </div>
         </div>

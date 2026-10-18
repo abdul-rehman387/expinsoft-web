@@ -9,7 +9,7 @@ import ecommerceDevImg from '../assets/eCommerce.jpg'
 import uiuxImg from '../assets/UIUX-design.webp'
 import graphicDesignImg from '../assets/Graphic-Design.jpg'
 
-const unsplash = (id) => `https://images.unsplash.com/photo-${id}?w=600&q=80`
+const unsplash = (id) => `https://images.unsplash.com/photo-${id}?w=600&q=80&auto=format`
 
 const serviceGroups = [
   {
@@ -208,7 +208,7 @@ export default function Services() {
               <div className="svc-grid svc-grid-catalog">
                 {group.items.map(s => (
                   <Link key={s.h} to={s.href || '/services'} className="svc">
-                    <img src={s.src || unsplash(s.img)} alt={s.h} loading="lazy" />
+                    <img src={s.src || unsplash(s.img)} alt="" loading="lazy" />
                     <div className="ov" />
                     <h3>{s.h}</h3>
                     <span className="arr"><ArrowRight size={16} strokeWidth={2} /></span>
@@ -261,7 +261,7 @@ export default function Services() {
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>Book a Free Consultation</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="Team" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>

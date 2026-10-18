@@ -124,7 +124,7 @@ export default function AiAgentsChatbots() {
               <Link to="/portfolio" className="btn" style={{ marginTop: 20 }}>View Our Work →</Link>
             </div>
             <div className="pf-img">
-              <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=700&q=80" alt="AI agent" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=700&q=80&auto=format" alt="AI agent" loading="lazy" />
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function AiAgentsChatbots() {
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>Book a Free Consultation</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="Team" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>

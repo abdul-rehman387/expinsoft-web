@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CheckCircle2, Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { CONTACT_EMAIL, INFO_EMAIL, SERVICE_OPTIONS as services } from '../data/contact'
+import { trackLead } from '../lib/analytics'
 
 const details = [
   { ic: Mail, h: 'General Inquiries', p: INFO_EMAIL, href: `mailto:${INFO_EMAIL}` },
@@ -18,7 +19,7 @@ export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
 
   const onChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
-  const onSubmit = e => { e.preventDefault(); setSent(true) }
+  const onSubmit = e => { e.preventDefault(); trackLead('contact', { service: form.service }); setSent(true) }
 
   return (
     <>
@@ -46,7 +47,7 @@ export default function Contact() {
             </div>
 
             <div className="form-card">
-              <h3>Send Us a Message</h3>
+              <h2 className="form-title">Send Us a Message</h2>
               {sent ? (
                 <p className="success-msg"><CheckCircle2 size={18} strokeWidth={1.75} /> Thanks! We'll be in touch within one business day.</p>
               ) : (

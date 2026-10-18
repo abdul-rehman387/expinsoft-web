@@ -124,7 +124,7 @@ export default function EnterpriseSoftware() {
               <Link to="/portfolio" className="btn" style={{ marginTop: 20 }}>View Case Study →</Link>
             </div>
             <div className="pf-img">
-              <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=700&q=80" alt="Enterprise software team" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=700&q=80&auto=format" alt="Enterprise software team" loading="lazy" />
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function EnterpriseSoftware() {
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>Book a Free Consultation</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="Team" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>

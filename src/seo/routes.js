@@ -17,7 +17,7 @@ const pages = [
     title: 'Software Development Company | AE Seller',
     description: 'AE Seller is a software development company delivering custom software, web and mobile apps, AI automation, cloud solutions, and digital services.',
     // LCP element is the .hero-bg CSS background (index.css) - keep these in sync.
-    preloadImage: 'https://images.unsplash.com/photo-1532190872407-280735d27e08?w=1600&q=80',
+    preloadImage: 'https://images.unsplash.com/photo-1532190872407-280735d27e08?w=1600&q=80&auto=format',
   },
   {
     path: '/services',
@@ -91,7 +91,7 @@ const pages = [
   },
   {
     path: '/saas-development',
-    title: 'SaaS Development Company | AE Seller',
+    title: 'SaaS Product Development Services | AE Seller',
     description: 'SaaS product development from prototype to billing-ready multi-tenant platform - subscription billing, usage metering, and role-based access built in.',
     name: 'SaaS Development', crumbs: [SERVICES], service: 'SaaS Development',
   },
@@ -219,7 +219,7 @@ const pages = [
   // Cloud
   {
     path: '/aws-solutions',
-    title: 'AWS Consulting & Development Services | AE Seller',
+    title: 'AWS Solutions & Development Services | AE Seller',
     description: 'AWS infrastructure design, migration, and management for production workloads - right-sized from day one so you only pay for what you need.',
     name: 'AWS Solutions', crumbs: [SERVICES], service: 'AWS Cloud Services',
   },
@@ -303,7 +303,7 @@ const pages = [
   },
   {
     path: '/contact',
-    title: 'Contact AE Seller | Get a Software Development Quote',
+    title: 'Contact AE Seller | Start Your Software Project',
     description: 'Contact AE Seller to discuss a software, web, mobile, or AI automation project. Email info@aeseller.com or send a message - we reply within one business day.',
     name: 'Contact', type: 'ContactPage',
   },
@@ -344,7 +344,7 @@ const posts = blogPosts.map(post => ({
   description: post.p,
   name: post.h,
   crumbs: [INSIGHTS],
-  image: `https://images.unsplash.com/photo-${post.img}?w=1200&q=80`,
+  image: `https://images.unsplash.com/photo-${post.img}?w=1200&q=80&auto=format`,
   article: post,
   updated: post.updated,
 }))

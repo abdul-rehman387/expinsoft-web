@@ -13,7 +13,7 @@ const cardStyle = {
   },
 }
 
-export default function StripeCardForm({ amount, planName, billing, onSuccess }) {
+export default function StripeCardForm({ amount, billing, onSuccess }) {
   const stripe = useStripe()
   const elements = useElements()
   const [submitting, setSubmitting] = useState(false)

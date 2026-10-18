@@ -124,7 +124,7 @@ export default function AzureDevOps() {
               <Link to="/portfolio" className="btn" style={{ marginTop: 20 }}>View Case Study →</Link>
             </div>
             <div className="pf-img">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=80" alt="Azure DevOps pipeline" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=80&auto=format" alt="Azure DevOps pipeline" loading="lazy" />
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function AzureDevOps() {
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>Book a Free Consultation</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="Team" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>

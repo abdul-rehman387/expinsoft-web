@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import digitalServicesImg from '../assets/Digital-Services.webp'
 import { industries } from '../data/industries'
 import { blogPosts } from '../data/blogPosts'
+import { trackLead } from '../lib/analytics'
 import { CONTACT_EMAIL, INFO_EMAIL } from '../data/contact'
 import { ArrowRight, Bot, ChartLine, CheckCircle2, Mail, MapPin, MessageSquare, Phone, RefreshCw, Target, Timer, Workflow } from 'lucide-react'
 
@@ -31,7 +32,7 @@ const cases = [
     h: 'Multiplayer Sports Gaming Platform',
     desc: 'A competitive fantasy-sports and gaming ecosystem with real-time matchmaking, live leaderboards, and in-app purchases across iOS and Android.',
     impact: ['500k+ downloads in first 90 days', 'Real-time play for 50k concurrent users', '4.8★ App Store rating'],
-    img: 'https://images.unsplash.com/photo-1600861194942-f883de0dfe96?w=700&q=80',
+    img: 'https://images.unsplash.com/photo-1600861194942-f883de0dfe96?w=700&q=80&auto=format',
     tag: 'Gaming / Consumer',
   },
 ]
@@ -87,7 +88,7 @@ export default function Home() {
   const [formSent, setFormSent] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' })
   const onChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
-  const onSubmit = e => { e.preventDefault(); setFormSent(true) }
+  const onSubmit = e => { e.preventDefault(); trackLead('home'); setFormSent(true) }
 
   return (
     <>
@@ -126,7 +127,7 @@ export default function Home() {
           <div className="svc-grid">
             {services.map(s => (
               <Link key={s.title} to={s.href} className="svc">
-                <img src={`https://images.unsplash.com/photo-${s.img}?w=600&q=80`} alt={s.title} loading="lazy" />
+                <img src={`https://images.unsplash.com/photo-${s.img}?w=600&q=80&auto=format`} alt="" loading="lazy" />
                 <div className="ov" />
                 <h3>{s.title}</h3>
                 <span className="arr"><ArrowRight size={16} strokeWidth={2} /></span>
@@ -163,7 +164,7 @@ export default function Home() {
                 <Link to="/portfolio" className="btn">View Full Case Study</Link>
               </div>
               <div className="case-img">
-                <img src={c.img} alt={c.h} loading="lazy" />
+                <img src={c.img} alt="" loading="lazy" />
               </div>
             </div>
           ))}
@@ -184,7 +185,7 @@ export default function Home() {
                 <div className="stars">{t.stars}</div>
                 <p className="quote">"{t.quote}"</p>
                 <div className="who">
-                  <img src={`https://images.unsplash.com/photo-${t.face}?w=80&q=80`} alt={t.name} loading="lazy" />
+                  <img src={`https://images.unsplash.com/photo-${t.face}?w=80&q=80&auto=format`} alt="" loading="lazy" />
                   <div>
                     <b>{t.name}</b>
                     <span>{t.role}</span>
@@ -213,12 +214,12 @@ export default function Home() {
                 { h: 'Mining & Node Tools', p: 'Node deployment, validator monitoring, and mining fleet dashboards.', href: '/mining-node-tools' },
               ].map((it, i) => (
                 <Link key={it.h} to={it.href} className={`item${i === 0 ? ' active' : ''}`}>
-                  <h4>{it.h}</h4>
+                  <h3>{it.h}</h3>
                   <p>{it.p}</p>
                 </Link>
               ))}
               <div className="thumb">
-                <img src="https://images.unsplash.com/photo-1694903110330-cc64b7e1d21d?w=400&q=80" alt="AI" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1694903110330-cc64b7e1d21d?w=400&q=80&auto=format" alt="" loading="lazy" />
               </div>
             </div>
             <div className="ai-main">
@@ -250,7 +251,7 @@ export default function Home() {
               <Link to="/services" className="btn btn-orange">Start Your Project</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="Team collaboration" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>
@@ -266,7 +267,7 @@ export default function Home() {
           <div className="ind-grid">
             {industries.map(ind => (
               <div key={ind.h} className="ind">
-                <img src={ind.img} alt={ind.h} loading="lazy" />
+                <img src={ind.img} alt="" loading="lazy" />
                 <div className="ov" />
                 <h3>{ind.h}</h3>
                 <p>{ind.p}</p>
@@ -338,7 +339,7 @@ export default function Home() {
             {blogs.map(b => (
               <div key={b.h} className="blog">
                 <div className="img">
-                  <img src={`https://images.unsplash.com/photo-${b.img}?w=600&q=80`} alt={b.h} loading="lazy" />
+                  <img src={`https://images.unsplash.com/photo-${b.img}?w=600&q=80&auto=format`} alt="" loading="lazy" />
                 </div>
                 <div className="bd">
                   <h3>{b.h}</h3>
@@ -359,7 +360,7 @@ export default function Home() {
               <p className="eyebrow orange" style={{ marginBottom: 12 }}>Get In Touch</p>
               <h2>Tell Us About Your Project</h2>
               <p className="sub">Whether you have a rough idea or a detailed spec - our team will help you clarify scope, estimate cost, and chart a path to launch.</p>
-              <h4>Trusted by industry leaders</h4>
+              <h3 className="trust-title">Trusted by industry leaders</h3>
               <div className="rev-list">
                 <div className="rev-item">
                   <span className="badge">4.8</span>

@@ -124,7 +124,7 @@ export default function NftMarketplace() {
               <Link to="/portfolio" className="btn" style={{ marginTop: 20 }}>View Case Study →</Link>
             </div>
             <div className="pf-img">
-              <img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=700&q=80" alt="NFT marketplace development" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=700&q=80&auto=format" alt="NFT marketplace development" loading="lazy" />
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function NftMarketplace() {
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>Book a Free Consultation</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="Team" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>

@@ -1,8 +1,5 @@
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js'
-
-const clientId = import.meta.env.VITE_PAYPAL_CLIENT_ID
-
-export const paypalEnabled = Boolean(clientId)
+import { clientId } from '../lib/paypal'
 
 export default function PayPalCheckoutButton({ amount, planName, onSuccess, onError }) {
   return (

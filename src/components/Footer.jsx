@@ -32,19 +32,19 @@ export default function Footer() {
 
         <div className="fcols">
           <div className="fcol">
-            <h4>Services</h4>
+            <h3>Services</h3>
             <div className="flink-grid">
               {services.map(s => <Link key={s.label} to={s.href}>{s.label}</Link>)}
             </div>
           </div>
           <div className="fcol">
-            <h4>Technologies</h4>
+            <h3>Technologies</h3>
             <div className="flink-grid">
               {technologies.map(t => <Link key={t} to="/technologies">{t}</Link>)}
             </div>
           </div>
           <div className="fcol">
-            <h4>Company</h4>
+            <h3>Company</h3>
             <Link to="/about">About AE Seller</Link>
             <Link to="/">Careers</Link>
             <Link to="/insights">Blog & Insights</Link>
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div className="locs">
-          <h4>Our Offices</h4>
+          <h3>Our Offices</h3>
           <div className="loc-codes">
             <span>Coquitlam, Canada</span>
             <span>Karachi, Pakistan</span>
@@ -69,7 +69,7 @@ export default function Footer() {
 
         <div className="fbottom">
           <div className="fbottom-brand">
-            <img src={logo} alt="AE Seller" className="fbottom-logo" />
+            <img src={logo} alt="AE Seller" width="356" height="107" className="fbottom-logo" loading="lazy" />
             <p>© AE Seller 2026. All rights reserved.</p>
           </div>
           <div className="links">

@@ -34,7 +34,7 @@ export default function BlogArticle() {
       <section className="sec" style={{ paddingTop: 30 }}>
         <div className="wrap">
           <div className="article-hero">
-            <img src={`https://images.unsplash.com/photo-${post.img}?w=1200&q=80`} alt={post.h} loading="lazy" />
+            <img src={`https://images.unsplash.com/photo-${post.img}?w=1200&q=80&auto=format`} alt="" loading="lazy" />
           </div>
 
           <div className="article-body">
@@ -62,7 +62,7 @@ export default function BlogArticle() {
               {related.map(b => (
                 <div key={b.slug} className="blog">
                   <div className="img">
-                    <img src={`https://images.unsplash.com/photo-${b.img}?w=600&q=80`} alt={b.h} loading="lazy" />
+                    <img src={`https://images.unsplash.com/photo-${b.img}?w=600&q=80&auto=format`} alt="" loading="lazy" />
                   </div>
                   <div className="bd">
                     <span className="blog-meta">{b.topic} · {b.readTime}</span>
@@ -87,7 +87,7 @@ export default function BlogArticle() {
               <Link to="/contact" className="btn btn-orange">Discuss Your Project →</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="Team collaboration" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>

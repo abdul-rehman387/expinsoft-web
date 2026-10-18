@@ -191,7 +191,7 @@ export default function MobileApp() {
                 <Link to="/portfolio" className="btn" style={{ marginTop: 20 }}>View Case Study →</Link>
               </div>
               <div className="pf-img">
-                <img src={`https://images.unsplash.com/photo-${c.img}?w=700&q=80`} alt={c.h} loading="lazy" />
+                <img src={`https://images.unsplash.com/photo-${c.img}?w=700&q=80&auto=format`} alt="" loading="lazy" />
               </div>
             </div>
           ))}
@@ -241,7 +241,7 @@ export default function MobileApp() {
               <div key={t.name} className="tcard">
                 <div
                   className="ph"
-                  style={{ backgroundImage: `url(https://images.unsplash.com/photo-${t.face}?w=600&q=80)` }}
+                  style={{ backgroundImage: `url(https://images.unsplash.com/photo-${t.face}?w=600&q=80&auto=format)` }}
                 />
                 <div className="bd">
                   <div className="stars">{t.stars}</div>
@@ -290,7 +290,7 @@ export default function MobileApp() {
           </div>
           <div className="est-grid">
             <div className="est-img">
-              <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80" alt="Mobile app" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80&auto=format" alt="Mobile app" loading="lazy" />
             </div>
             <div className="est-box">
               <div className="est-bar"><i /></div>
@@ -325,7 +325,7 @@ export default function MobileApp() {
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>Book a Free Call</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="Team" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>

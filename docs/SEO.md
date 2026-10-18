@@ -59,6 +59,15 @@ Manual deploy instead: `npm run build && npx firebase-tools deploy --only hostin
 4. DNS + SSL usually take from minutes up to 24 hours. Then run `node scripts/seo-live-check.mjs` - all checks should pass - and submit `https://aeseller.com/sitemap.xml` in Search Console.
 5. Disconnect the old Vercel project (Vercel > Project > Settings > Git > Disconnect, then delete the project) so it stops commenting on PRs.
 
+### Status 2026-10-18 and the remaining www fix
+
+Production is on Firebase (`aeseller.com` -> 199.36.158.100, TXT `hosting-site=ae-seler`). The live crawl (`node scripts/seo-live-check.mjs`) passes 78/79: everything except **www**. `www.aeseller.com` is a CNAME to the apex, so it reaches Firebase, but it is not registered as a custom domain on the site - Firebase has no certificate for it (browsers get `ERR_CERT_COMMON_NAME_INVALID`; `http://www` 301s to that broken `https://www`). `firebase.json` cannot redirect by hostname, so this is fixed in the console only:
+
+1. Firebase console > Hosting > site `ae-seler` > **Add custom domain** > `www.aeseller.com`.
+2. Tick **Redirect www.aeseller.com to an existing website** and choose `aeseller.com`.
+3. Add the DNS record(s) Firebase shows in Hostinger hPanel > DNS (it may ask you to replace the current `www` CNAME with its own record). Wait for "Connected" and the certificate (minutes to 24 h).
+4. Verify: `curl -I https://www.aeseller.com/some/path?x=1` -> `301` with `Location: https://aeseller.com/some/path?x=1` (path and query preserved, single hop); `http://www` -> one hop to `https://www`, then one to the apex. Then `node scripts/seo-live-check.mjs` should pass 79/79.
+
 ## Search Console API setup (owner)
 
 1. Verify a **Domain property** `aeseller.com` in Search Console via DNS TXT record (covers http/https/www).
@@ -92,3 +101,17 @@ All changes are build-time. To revert prerendering only: set `"build": "vite bui
 - `public/portfolio/*/*.html` (6 demo bundles) - `noindex` meta added.
 - `firebase.json`, `.firebaserc`, Firebase workflows - hosting moved from Vercel to Firebase project `ae-seler`; cleanUrls, no trailing slash, removed catch-all rewrite, legacy 301s, asset caching. `vercel.json` removed.
 - `package.json` - build pipeline, `test:seo`, `check` scripts. `.gitignore` - GSC keys and reports.
+
+## Changelog - 2026-10-18 (round 2: on-page, images, performance)
+
+Measured against the live Firebase site and a local A/B of the previous commit; see the report for numbers.
+
+- **Headings:** footer column titles h4 -> h3 (all pages); sidebar/contact form titles h3 -> h2 (`.form-title`); About "Our Mission" h3 -> h2; homepage AI list h4 -> h3; sitemap columns h4 -> h2. CSS selectors extended so rendering is pixel-identical (verified by screenshot diff). `npm run test:seo` now fails on any skipped heading level.
+- **H1 / title alignment:** /insights, /technologies, /portfolio (removed the unverified "800+ Projects" claim, which also contradicted the page's own "110+" stat), /about. Titles for /saas-development, /aws-solutions, /contact now match page copy.
+- **Internal redirects:** 5 portfolio demo links pointed at `.html` URLs that Firebase 301s; now link to the clean URL. Test now fails on `.html` or trailing-slash internal links.
+- **Images:** 10 portfolio mockups converted to WebP 1200w/640w with `srcset`, intrinsic `width`/`height` and specific alt text written from the actual images (9.3 MB of originals -> 0.47 MB at 1200w; originals kept). 57 decorative/redundant images now use `alt=""` (stock photos labelled "Team"/"AE Seller team", thumbnails repeating the adjacent heading). Unsplash URLs get `auto=format` (AVIF/WebP; hero 67 KB -> 17 KB). Logos get intrinsic dimensions.
+- **Fonts:** self-hosted latin WOFF2 (Poppins 400-800, Inter variable) in `public/fonts`, `@font-face` in `src/index.css`, 3 preloads; removed the render-blocking Google Fonts stylesheet and unused weight 900.
+- **Caching:** 30-day cache for images, 1-year for `/fonts`, immutable `/assets` kept (rule order matters in `firebase.json`).
+- **GA4:** `src/lib/analytics.js` - inert unless `VITE_GA_MEASUREMENT_ID` is set; `generate_lead` fired by all four forms.
+- **Lint:** fixed the 3 pre-existing errors (Header effect, PayPal constant moved to `src/lib/paypal.js`, unused Stripe prop); Firebase-generated `functions/` and `src/dataconnect-generated/` excluded from root lint. CI now runs lint and uploads `seo-reports/`.
+- **QC:** `npm run test:seo` writes `seo-reports/seo-check.json` + `.md` (per-page words, headings, images, JSON-LD types); new checks for heading order, prerendered word count, missing alt attributes, redirecting internal links and legacy URLs in the sitemap.

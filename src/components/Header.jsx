@@ -102,7 +102,13 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => { setMenuOpen(false); setMegaOpen(false) }, [pathname])
+  // Close menus on navigation (state adjusted during render, not in an effect).
+  const [prevPath, setPrevPath] = useState(pathname)
+  if (pathname !== prevPath) {
+    setPrevPath(pathname)
+    setMenuOpen(false)
+    setMegaOpen(false)
+  }
 
   const openMega = () => { clearTimeout(megaTimer.current); setMegaOpen(true) }
   const closeMega = () => { megaTimer.current = setTimeout(() => setMegaOpen(false), 160) }
@@ -115,7 +121,7 @@ export default function Header() {
       <div className="wrap">
         <nav className="nav">
           <Link to="/" className="logo">
-            <img src={logo} alt="AE Seller" />
+            <img src={logo} alt="AE Seller" width="356" height="107" />
           </Link>
 
           <div className={`menu${menuOpen ? ' open' : ''}`}>
@@ -161,8 +167,8 @@ export default function Header() {
               <h3>Put AI to Work</h3>
               <p>AE Seller builds AI agents, bots, and automations that run your operations around the clock.</p>
               <img
-                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=480&q=80"
-                alt="AI automation"
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=480&q=80&auto=format"
+                alt=""
               />
               <Link to="/ai-agents-chatbots" className="btn btn-sm">Explore AI Services</Link>
             </div>

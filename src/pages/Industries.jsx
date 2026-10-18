@@ -69,7 +69,7 @@ export default function Industries() {
           <div className="ind-grid">
             {industries.map(ind => (
               <div key={ind.h} className="ind">
-                <img src={ind.img} alt={ind.h} loading="lazy" />
+                <img src={ind.img} alt="" loading="lazy" />
                 <div className="ov" />
                 <h3>{ind.h}</h3>
                 <p>{ind.p}</p>
@@ -120,7 +120,7 @@ export default function Industries() {
               <Link to="/workflow-automation" className="btn" style={{ marginTop: 20 }}>Explore Workflow Automation →</Link>
             </div>
             <div className="pf-img">
-              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80" alt="IT team working on support automation" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80&auto=format" alt="IT team working on support automation" loading="lazy" />
             </div>
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function Industries() {
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>Talk to an Industry Expert</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="Team" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>

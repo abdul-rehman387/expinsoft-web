@@ -124,7 +124,7 @@ export default function SocialMediaMarketing() {
               <Link to="/portfolio" className="btn" style={{ marginTop: 20 }}>View Case Study →</Link>
             </div>
             <div className="pf-img">
-              <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=700&q=80" alt="Social media marketing content" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=700&q=80&auto=format" alt="Social media marketing content" loading="lazy" />
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function SocialMediaMarketing() {
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>Book a Free Consultation</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="Team" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>

@@ -125,7 +125,7 @@ export default function ApiIntegration() {
               <Link to="/portfolio" className="btn" style={{ marginTop: 20 }}>View Case Study →</Link>
             </div>
             <div className="pf-img">
-              <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=700&q=80" alt="API integration development" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=700&q=80&auto=format" alt="API integration development" loading="lazy" />
             </div>
           </div>
         </div>
@@ -157,7 +157,7 @@ export default function ApiIntegration() {
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>Book a Free Consultation</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="API development" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80&auto=format" alt="API development" loading="lazy" />
             </div>
           </div>
         </div>

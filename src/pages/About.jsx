@@ -28,7 +28,7 @@ export default function About() {
                 <span className="cur">About Us</span>
               </p>
               <p className="eyebrow orange" style={{ marginBottom: 14 }}>About AE Seller</p>
-              <h1>Building the Tools That Drive Your Business Forward</h1>
+              <h1>About AE Seller: Custom Software &amp; Automation</h1>
               <p>
                 Welcome to AE Seller. We build the software, bots, and automations that help businesses run
                 smoother and grow faster. With a strong background in software development and e-commerce, we
@@ -45,7 +45,7 @@ export default function About() {
             </div>
             <div className="mission-card">
               <div className="ic"><Target size={24} strokeWidth={1.75} /></div>
-              <h3>Our Mission</h3>
+              <h2 className="mission-title">Our Mission</h2>
               <blockquote>
                 To make advanced technology - from custom agents to Web3 tools - practical, accessible, and easy
                 for your team to use every single day.
@@ -108,7 +108,7 @@ export default function About() {
               </Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="AE Seller team" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>

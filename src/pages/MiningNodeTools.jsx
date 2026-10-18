@@ -125,7 +125,7 @@ export default function MiningNodeTools() {
               <Link to="/portfolio" className="btn" style={{ marginTop: 20 }}>View Our Work →</Link>
             </div>
             <div className="pf-img">
-              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80" alt="Server infrastructure" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80&auto=format" alt="Server infrastructure" loading="lazy" />
             </div>
           </div>
         </div>
@@ -157,7 +157,7 @@ export default function MiningNodeTools() {
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>Book a Free Infrastructure Review</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" alt="Team" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format" alt="" loading="lazy" />
             </div>
           </div>
         </div>

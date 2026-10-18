@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { CheckCircle2, X } from 'lucide-react'
 import { SERVICE_OPTIONS as services } from '../data/contact'
+import { trackLead } from '../lib/analytics'
 
 export default function QuoteModal({ onClose }) {
   const [sent, setSent] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
 
   const onChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
-  const onSubmit = e => { e.preventDefault(); setSent(true) }
+  const onSubmit = e => { e.preventDefault(); trackLead('quote', { service: form.service }); setSent(true) }
 
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose() }

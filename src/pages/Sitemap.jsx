@@ -79,7 +79,7 @@ export default function Sitemap() {
           <div className="sitemap-grid">
             {columns.map(col => (
               <div key={col.h} className="sitemap-col">
-                <h4>{col.h}</h4>
+                <h2>{col.h}</h2>
                 {col.links.map(l => (
                   l.external
                     ? <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer">{l.label} ↗</a>

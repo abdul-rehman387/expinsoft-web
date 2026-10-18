@@ -72,7 +72,7 @@ export default function Technologies() {
                 <span className="cur">Technologies</span>
               </p>
               <p className="eyebrow orange" style={{ marginBottom: 14 }}>Our Stack</p>
-              <h1>Best-in-Class Technologies for Every Challenge</h1>
+              <h1>Our Software Development Technology Stack</h1>
               <p className="lead">
                 We don't lock you into a single vendor. We select the right technology for each problem -
                 drawing from a broad, battle-tested stack spanning languages, frameworks, and cloud platforms.
@@ -119,7 +119,7 @@ export default function Technologies() {
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>Book a Tech Consultation</Link>
             </div>
             <div className="pic">
-              <img src="https://images.unsplash.com/photo-1639066648921-82d4500abf1a?w=800&q=80" alt="Cloud tech" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1639066648921-82d4500abf1a?w=800&q=80&auto=format" alt="Cloud tech" loading="lazy" />
             </div>
           </div>
         </div>

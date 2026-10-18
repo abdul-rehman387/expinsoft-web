@@ -47,7 +47,7 @@ export default function TrustpilotSlider() {
               </div>
               <p className="tp-quote">"{r.quote}"</p>
               <div className="tp-who">
-                <img className="tp-avatar" src={`https://images.unsplash.com/photo-${r.face}?w=64&q=70`} alt={r.name} loading="lazy" />
+                <img className="tp-avatar" src={`https://images.unsplash.com/photo-${r.face}?w=64&q=70&auto=format`} alt="" loading="lazy" />
                 <b className="tp-name">{r.name}</b>
               </div>
             </div>

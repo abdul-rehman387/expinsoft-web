@@ -5,7 +5,8 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  // functions/ and dataconnect output are Firebase-generated with their own tooling.
+  globalIgnores(['dist', 'dist-ssr', 'functions', 'src/dataconnect-generated']),
   {
     files: ['**/*.{js,jsx}'],
     extends: [
