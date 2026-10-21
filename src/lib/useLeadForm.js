@@ -4,10 +4,10 @@ import { trackLead } from './analytics'
 // Visually hidden but present in the DOM: people never fill it, naive bots do.
 const HONEYPOT_STYLE = { position: 'absolute', left: '-10000px', top: 'auto', width: 1, height: 1, overflow: 'hidden' }
 
-const FALLBACK_ERROR = "We couldn't send your message right now. Please try again, or email contact@aeseller.com directly."
+const FALLBACK_ERROR = "We couldn't send your message right now. Please try again, or email contact@expinsoft.com directly."
 
-// Shared state + submission for every lead form. Posts to /api/lead (a Firebase
-// Hosting rewrite to the submitLead Cloud Function, which emails the lead), and
+// Shared state + submission for every lead form. Posts to /api/lead (the Vercel
+// Serverless Function in api/lead.js, which emails the lead), and
 // reports success only after the server confirms the email was sent.
 export function useLeadForm(formId, initial) {
   const [form, setForm] = useState(initial)

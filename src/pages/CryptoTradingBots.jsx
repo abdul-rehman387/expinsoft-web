@@ -129,7 +129,7 @@ export default function CryptoTradingBots() {
             </div>
           </div>
           <p style={{ fontSize: 12.5, color: 'var(--slate)', maxWidth: 820, margin: '0 auto', textAlign: 'center' }}>
-            Risk notice: AE Seller builds software to your specifications and does not provide financial advice or
+            Risk notice: ExpinSoft builds software to your specifications and does not provide financial advice or
             manage funds. Cryptocurrency trading carries substantial risk, and no bot or strategy can guarantee profits.
           </p>
         </div>

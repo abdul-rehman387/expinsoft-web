@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Bot, ChartLine, MapPin, MessageSquare, Target, Workflow } from 'lucide-react'
-import { CONTACT_EMAIL, INFO_EMAIL } from '../data/contact'
+import { CONTACT_EMAIL } from '../data/contact'
 
 const offerings = [
   { ic: MessageSquare, h: 'Telegram & Discord Bots', p: 'Custom bots that moderate, engage, and automate your community.', href: '/telegram-discord-bots' },
@@ -27,10 +27,10 @@ export default function About() {
                 <span className="sep">/</span>
                 <span className="cur">About Us</span>
               </p>
-              <p className="eyebrow orange" style={{ marginBottom: 14 }}>About AE Seller</p>
-              <h1>About AE Seller: Custom Software &amp; Automation</h1>
+              <p className="eyebrow orange" style={{ marginBottom: 14 }}>About ExpinSoft</p>
+              <h1>About ExpinSoft: Custom Software &amp; Automation</h1>
               <p>
-                Welcome to AE Seller. We build the software, bots, and automations that help businesses run
+                Welcome to ExpinSoft. We build the software, bots, and automations that help businesses run
                 smoother and grow faster. With a strong background in software development and e-commerce, we
                 understand the real-world challenges companies face every day - and we know how to fix them.
               </p>
@@ -100,7 +100,7 @@ export default function About() {
               <p className="eyebrow" style={{ color: 'var(--orange)', marginBottom: 12 }}>Work With Us</p>
               <h2>What's Slowing Your Business Down?</h2>
               <p>
-                Tell us about your biggest bottleneck - reach us at {INFO_EMAIL} or {CONTACT_EMAIL} - and we'll
+                Tell us about your biggest bottleneck - reach us at {CONTACT_EMAIL} - and we'll
                 show you how to automate it.
               </p>
               <Link to="/contact" className="btn" style={{ background: 'var(--orange)' }}>

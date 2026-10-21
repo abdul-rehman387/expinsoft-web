@@ -1,5 +1,4 @@
-export const INFO_EMAIL = 'info@aeseller.com'
-export const CONTACT_EMAIL = 'contact@aeseller.com'
+export const CONTACT_EMAIL = 'contact@expinsoft.com'
 
 // All lead-capture forms are delivered to this inbox.
 export const LEAD_INBOX = CONTACT_EMAIL

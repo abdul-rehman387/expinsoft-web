@@ -12,7 +12,7 @@ How search-engine metadata, prerendering, sitemaps and monitoring work on aesell
 | Client sync | `src/components/SeoManager.jsx` | Updates `<head>` on client-side navigation. |
 | SSR entry | `src/entry-server.jsx` | Renders the app with `StaticRouter` at build time. |
 | Prerender | `scripts/prerender.mjs` | Writes `dist/<route>.html` (real content + head), `404.html`, `sitemap.xml`, `robots.txt`. |
-| Hosting | `firebase.json`, `.firebaserc` | Firebase Hosting: clean URLs, no trailing slash, real 404s, 301s for legacy equivalents. |
+| Hosting | `vercel.json` | Vercel: clean URLs, no trailing slash, real 404s, 301s for legacy equivalents, cache headers. |
 
 `npm run build` = client build -> SSR build -> prerender. The browser hydrates the prerendered HTML (`src/main.jsx`).
 
@@ -39,34 +39,19 @@ Components must not read `window`/`document` during render (only in effects) or 
 
 ## Legacy URLs
 
-The domain previously hosted a WooCommerce store and an unrelated blog (~570 URLs in the Wayback Machine). `firebase.json` 301-redirects the few with a real equivalent (`/about-us`, `/contact-2`, `/privacy-policy(-2)`, `/terms-and-conditions`, `/blog`, `/brand/ae-seller` -> `/about`). Everything else returns 404 from `404.html` (Firebase Hosting cannot send 410; Google treats 404 the same in practice). Never redirect obsolete URLs to the homepage.
+The domain previously hosted a WooCommerce store and an unrelated blog (~570 URLs in the Wayback Machine). `vercel.json` 301-redirects the few with a real equivalent (`/about-us`, `/contact-2`, `/privacy-policy(-2)`, `/terms-and-conditions`, `/blog`, `/brand/ae-seller` -> `/about`). Everything else returns 404 from `404.html` (Google treats 404 like 410 in practice). Never redirect obsolete URLs to the homepage.
 
-## Hosting: Firebase (project `ae-seler`, free Spark plan)
+## Hosting: Vercel (GitHub `abdul-rehman387/expinsoft-web`)
 
-Spark limits: 10 GB storage, ~360 MB/day transfer. The site is ~47 MB; the heaviest page is /portfolio (~8 MB of PNGs), so compress those images to stay well inside the daily limit.
+**One-time setup:**
+1. Vercel > **Add New > Project** > import `abdul-rehman387/expinsoft-web`. Framework, build command (`npm run build`) and output (`dist`) come from `vercel.json`.
+2. Project > Settings > Environment Variables: add `SMTP_PASS` (password of the site mailbox) for the lead forms - see `docs/LEAD-FORMS.md`.
+3. Every push to `main` deploys to production; every other branch/PR gets a preview URL.
 
-**One-time GitHub deploy setup** (lets the workflows deploy):
-1. `npx firebase-tools login`
-2. `npx firebase-tools init hosting:github` in this repo - choose `abdul-rehman387/aeseller`. It creates a service account and stores it as a GitHub secret; make sure the secret is named `FIREBASE_SERVICE_ACCOUNT_AE_SELER` (the name the workflows use) and **decline** its offer to overwrite the existing workflow files and `firebase.json`.
-3. Every PR now gets a preview URL (`ae-seler--pr...web.app`); every merge to `main` deploys to live (`ae-seler.web.app`).
-
-Manual deploy instead: `npm run build && npx firebase-tools deploy --only hosting`.
-
-**Custom domain from Hostinger** (only after the live `ae-seler.web.app` looks right):
-1. Firebase console > Hosting > **Add custom domain** > `aeseller.com`.
-2. Copy the TXT record and A record(s) Firebase shows. In Hostinger hPanel > Domains > DNS / Nameservers > DNS records: **delete** the old `@` A record (216.198.79.1, Vercel) and any `@` AAAA record, then add Firebase's TXT and A records exactly as shown.
-3. Add `www.aeseller.com` as a second custom domain, choose **Redirect to aeseller.com**, and add the record Firebase shows for `www` (replace the existing www CNAME).
-4. DNS + SSL usually take from minutes up to 24 hours. Then run `node scripts/seo-live-check.mjs` - all checks should pass - and submit `https://aeseller.com/sitemap.xml` in Search Console.
-5. Disconnect the old Vercel project (Vercel > Project > Settings > Git > Disconnect, then delete the project) so it stops commenting on PRs.
-
-### Status 2026-10-18 and the remaining www fix
-
-Production is on Firebase (`aeseller.com` -> 199.36.158.100, TXT `hosting-site=ae-seler`). The live crawl (`node scripts/seo-live-check.mjs`) passes 78/79: everything except **www**. `www.aeseller.com` is a CNAME to the apex, so it reaches Firebase, but it is not registered as a custom domain on the site - Firebase has no certificate for it (browsers get `ERR_CERT_COMMON_NAME_INVALID`; `http://www` 301s to that broken `https://www`). `firebase.json` cannot redirect by hostname, so this is fixed in the console only:
-
-1. Firebase console > Hosting > site `ae-seler` > **Add custom domain** > `www.aeseller.com`.
-2. Tick **Redirect www.aeseller.com to an existing website** and choose `aeseller.com`.
-3. Add the DNS record(s) Firebase shows in Hostinger hPanel > DNS (it may ask you to replace the current `www` CNAME with its own record). Wait for "Connected" and the certificate (minutes to 24 h).
-4. Verify: `curl -I https://www.aeseller.com/some/path?x=1` -> `301` with `Location: https://aeseller.com/some/path?x=1` (path and query preserved, single hop); `http://www` -> one hop to `https://www`, then one to the apex. Then `node scripts/seo-live-check.mjs` should pass 79/79.
+**Custom domain from Hostinger:**
+1. Vercel > Project > Settings > Domains: add `expinsoft.com` and `www.expinsoft.com`, set `www` to **redirect (308) to expinsoft.com**.
+2. In Hostinger hPanel > DNS: add the A record (`@`) and CNAME (`www`) values Vercel shows, removing any old `@` A/AAAA records and the old `www` record.
+3. When both show "Valid Configuration", run `node scripts/seo-live-check.mjs` and submit `https://expinsoft.com/sitemap.xml` in Search Console.
 
 ## Search Console API setup (owner)
 
@@ -77,7 +62,7 @@ Production is on Firebase (`aeseller.com` -> 199.36.158.100, TXT `hosting-site=a
 
 ## Rollback
 
-All changes are build-time. To revert prerendering only: set `"build": "vite build"` in `package.json` and restore the catch-all rewrite `{ "source": "**", "destination": "/index.html" }` in `firebase.json` (this also restores the soft-404 problem).
+All changes are build-time. To revert prerendering only: set `"build": "vite build"` in `package.json` and restore the catch-all rewrite `{ "source": "/(.*)", "destination": "/index.html" }` in `vercel.json` `rewrites` (this also restores the soft-404 problem).
 
 ## Changelog - 2026-10-18 SEO implementation
 

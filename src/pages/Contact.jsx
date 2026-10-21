@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom'
 import { CheckCircle2, Clock, Mail, MapPin, Phone } from 'lucide-react'
-import { CONTACT_EMAIL, INFO_EMAIL, SERVICE_OPTIONS as services } from '../data/contact'
+import { CONTACT_EMAIL, SERVICE_OPTIONS as services } from '../data/contact'
 import { useLeadForm } from '../lib/useLeadForm'
 
 const details = [
-  { ic: Mail, h: 'General Inquiries', p: INFO_EMAIL, href: `mailto:${INFO_EMAIL}` },
-  { ic: Mail, h: 'Projects & Support', p: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
+  { ic: Mail, h: 'Email Us', p: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
   { ic: Phone, h: 'Call - USA', p: '+1 (832) 555-0190', href: 'tel:+18325550190' },
   { ic: Phone, h: 'Call - Pakistan', p: '+92 305 8002387', href: 'tel:+923058002387' },
   { ic: Clock, h: 'Business Hours', p: 'Mon – Fri, 9:00 AM – 6:00 PM' },
@@ -30,7 +29,7 @@ export default function Contact() {
                 <span className="cur">Contact</span>
               </p>
               <p className="eyebrow orange" style={{ marginBottom: 14 }}>Get In Touch</p>
-              <h1>Contact AE Seller</h1>
+              <h1>Contact ExpinSoft</h1>
               <p className="lead">
                 Have a project in mind or just exploring options? Reach out directly or send us a
                 message - our team typically replies within one business day.

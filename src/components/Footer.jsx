@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Mail, Phone } from 'lucide-react'
-import logo from '../assets/AE-Seller-Logo-light.png'
-import { CONTACT_EMAIL, INFO_EMAIL } from '../data/contact'
+import logo from '../assets/ExpinSoft-Logo.png'
+import { CONTACT_EMAIL } from '../data/contact'
 
 const services = [
   { label: 'AI Agents & Chatbots', href: '/ai-agents-chatbots' },
@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
           <div className="fcol">
             <h3>Company</h3>
-            <Link to="/about">About AE Seller</Link>
+            <Link to="/about">About ExpinSoft</Link>
             <Link to="/">Careers</Link>
             <Link to="/insights">Blog & Insights</Link>
             <Link to="/portfolio">Portfolio</Link>
@@ -61,7 +61,6 @@ export default function Footer() {
             <span>Karachi, Pakistan</span>
           </div>
           <div className="loc-meta">
-            <a href={`mailto:${INFO_EMAIL}`}><Mail size={16} strokeWidth={1.75} /> {INFO_EMAIL}</a>
             <a href={`mailto:${CONTACT_EMAIL}`}><Mail size={16} strokeWidth={1.75} /> {CONTACT_EMAIL}</a>
             <span><Phone size={16} strokeWidth={1.75} /> +1 (832) 555-0190</span>
           </div>
@@ -69,8 +68,8 @@ export default function Footer() {
 
         <div className="fbottom">
           <div className="fbottom-brand">
-            <img src={logo} alt="AE Seller" width="356" height="107" className="fbottom-logo" loading="lazy" />
-            <p>© AE Seller 2026. All rights reserved.</p>
+            <img src={logo} alt="ExpinSoft" width="480" height="118" className="fbottom-logo" loading="lazy" />
+            <p>© ExpinSoft 2026. All rights reserved.</p>
           </div>
           <div className="links">
             <Link to="/privacy">Privacy Policy</Link>

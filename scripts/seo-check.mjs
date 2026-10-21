@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const dist = join(root, 'dist')
-const SITE = 'https://aeseller.com'
+const SITE = 'https://expinsoft.com'
 
 const errors = []
 const warnings = []
@@ -27,7 +27,7 @@ const decode = s => s.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&l
 
 // robots.txt
 const robots = read(join(dist, 'robots.txt'))
-if (!/^Sitemap: https:\/\/aeseller\.com\/sitemap\.xml$/m.test(robots)) err('robots.txt', 'missing Sitemap line')
+if (!/^Sitemap: https:\/\/expinsoft\.com\/sitemap\.xml$/m.test(robots)) err('robots.txt', 'missing Sitemap line')
 if (/^Disallow: \/\s*$/m.test(robots)) err('robots.txt', 'blocks the whole site')
 
 // sitemap.xml

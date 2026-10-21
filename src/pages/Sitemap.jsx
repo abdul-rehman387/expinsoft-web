@@ -70,7 +70,7 @@ export default function Sitemap() {
           </p>
           <p className="eyebrow orange" style={{ marginBottom: 14 }}>Directory</p>
           <h1>Sitemap</h1>
-          <p className="lead">Every page on the AE Seller site, organized in one place.</p>
+          <p className="lead">Every page on the ExpinSoft site, organized in one place.</p>
         </div>
       </section>
 

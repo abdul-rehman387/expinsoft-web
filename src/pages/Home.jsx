@@ -4,25 +4,32 @@ import digitalServicesImg from '../assets/Digital-Services.webp'
 import { industries } from '../data/industries'
 import { blogPosts } from '../data/blogPosts'
 import { useLeadForm } from '../lib/useLeadForm'
-import { CONTACT_EMAIL, INFO_EMAIL } from '../data/contact'
-import { ArrowRight, Bot, ChartLine, CheckCircle2, Mail, MapPin, MessageSquare, Phone, RefreshCw, Target, Timer, Workflow } from 'lucide-react'
+import { CONTACT_EMAIL } from '../data/contact'
+import { ArrowRight, Award, Bot, ChartLine, CheckCircle2, Globe, Layers, Mail, MapPin, MessageSquare, Phone, RefreshCw, Rocket, Server, ShieldCheck, Smartphone, Star, Target, Timer, Users, Workflow } from 'lucide-react'
 
 const services = [
-  { title: 'AI Agents & Chatbots', img: '1677442136019-21780ecad995', href: '/ai-agents-chatbots' },
-  { title: 'Workflow Automation', img: '1551288049-bebda4e38f71', href: '/workflow-automation' },
-  { title: 'Telegram / Discord Bots', img: '1611926653458-09294b3142bf', href: '/telegram-discord-bots' },
-  { title: 'Crypto Trading Bots', img: '1642790106117-e829e14a795f', href: '/crypto-trading-bots' },
-  { title: 'Mining & Node Tools', img: '1558494949-ef010cbdcc31', href: '/mining-node-tools' },
-  { title: 'Web Development', img: '1542831371-29b0f74f9713', href: '/react-nextjs-development' },
-  { title: 'Mobile App Development', img: '1519389950473-47ba0277781c', href: '/mobile-app-development' },
-  { title: 'Custom Software Dev', img: '1515879218367-8466d910aaa4', href: '/enterprise-software' },
+  { title: 'AI Agents & Chatbots', ic: Bot, p: 'Assistants trained on your business that answer, qualify, and act.', href: '/ai-agents-chatbots' },
+  { title: 'Workflow Automation', ic: Workflow, p: 'Pipelines with AI steps that remove repetitive busywork.', href: '/workflow-automation' },
+  { title: 'Telegram / Discord Bots', ic: MessageSquare, p: 'Moderation, alerts, and paid access for your community.', href: '/telegram-discord-bots' },
+  { title: 'Crypto Trading Bots', ic: ChartLine, p: 'Your strategy executed 24/7 with backtesting and risk limits.', href: '/crypto-trading-bots' },
+  { title: 'Mining & Node Tools', ic: Server, p: 'Node deployment, validator monitoring, and fleet dashboards.', href: '/mining-node-tools' },
+  { title: 'Web Development', ic: Globe, p: 'Fast React and Next.js sites and web apps built to scale.', href: '/react-nextjs-development' },
+  { title: 'Mobile App Development', ic: Smartphone, p: 'Native and cross-platform apps for iOS and Android.', href: '/mobile-app-development' },
+  { title: 'Custom Software Dev', ic: Layers, p: 'Enterprise systems designed around your real processes.', href: '/enterprise-software' },
+]
+
+const heroStats = [
+  { ic: Rocket, b: '40+', span: 'Digital services' },
+  { ic: Users, b: '50+', span: 'Enterprise clients' },
+  { ic: Globe, b: '15+', span: 'Industries served' },
+  { ic: Star, b: '4.9', span: 'Average rating' },
 ]
 
 const cases = [
   {
     label: 'Digital Services',
     h: 'Full-Spectrum Digital Services, One Partner',
-    desc: 'From web and mobile platforms to AI-powered automation - AE Seller delivers end-to-end digital services under one roof, so you never have to stitch together multiple vendors to ship a product.',
+    desc: 'From web and mobile platforms to AI-powered automation - ExpinSoft delivers end-to-end digital services under one roof, so you never have to stitch together multiple vendors to ship a product.',
     impact: ['40+ digital services under one roof', '15+ industries served worldwide', 'Dedicated senior engineers on every build'],
     img: digitalServicesImg,
     tag: 'Digital Services / Full-Stack',
@@ -40,7 +47,7 @@ const cases = [
 const testimonials = [
   {
     stars: '★★★★★',
-    quote: 'AE Seller\'s team felt like an extension of ours. They delivered a production-grade pipeline app on time, under budget, and with zero surprises.',
+    quote: 'ExpinSoft\'s team felt like an extension of ours. They delivered a production-grade pipeline app on time, under budget, and with zero surprises.',
     name: 'Bob Gammon', role: 'VP Engineering, Kinder Morgan',
     face: '1676989880361-091e12efc056',
   },
@@ -58,7 +65,7 @@ const testimonials = [
   },
   {
     stars: '★★★★★',
-    quote: 'We evaluated four agencies before AE Seller. None came close on technical depth or how quickly they got up to speed on our domain.',
+    quote: 'We evaluated four agencies before ExpinSoft. None came close on technical depth or how quickly they got up to speed on our domain.',
     name: 'Farah Al-Sayed', role: 'Head of Digital, Saudi Bell',
     face: '1573497019940-1c28c88b4f3e',
   },
@@ -94,21 +101,39 @@ export default function Home() {
       <section className="hero">
         <div className="hero-bg" />
         <div className="hero-ov" />
-        <div className="wrap">
-          <p className="eyebrow orange">Software Development Company</p>
-          <h1>Custom Software Development & Digital Solutions</h1>
-          <p className="hero-lead">AE Seller builds custom software, web and mobile apps, SaaS platforms, and cloud infrastructure - with AI agents and workflow automation that keep your operations running around the clock.</p>
-          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-            <Link to="/services" className="btn">Explore Services</Link>
-            <Link to="/portfolio" className="btn btn-ghost">View Portfolio</Link>
+        <div className="hero-stripes" aria-hidden="true" />
+        <div className="wrap hero-grid">
+          <div>
+            <p className="eyebrow orange">Software Development Company</p>
+            <h1>Custom Software Development & Digital Solutions</h1>
+            <p className="hero-lead">ExpinSoft builds custom software, web and mobile apps, SaaS platforms, and cloud infrastructure - with AI agents and workflow automation that keep your operations running around the clock.</p>
+            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+              <Link to="/services" className="btn">Explore Services</Link>
+              <Link to="/portfolio" className="btn btn-ghost btn-light">View Portfolio</Link>
+            </div>
+            <div className="featured">
+              <span className="lbl">Trusted by</span>
+              <div className="logos">
+                <span>KINDER MORGAN</span>
+                <span>UTMB</span>
+                <span>MOBIUS</span>
+                <span>SAUDI BELL</span>
+              </div>
+            </div>
           </div>
-          <div className="featured">
-            <span className="lbl">Trusted by</span>
-            <div className="logos">
-              <span>KINDER MORGAN</span>
-              <span>UTMB</span>
-              <span>MOBIUS</span>
-              <span>SAUDI BELL</span>
+          <div className="hero-panel">
+            <p className="hero-panel-h">Why teams choose ExpinSoft</p>
+            <div className="hero-stats">
+              {heroStats.map(st => (
+                <div key={st.span} className="hero-stat">
+                  <span className="ic"><st.ic size={20} strokeWidth={1.75} /></span>
+                  <b>{st.b}</b>
+                  <span>{st.span}</span>
+                </div>
+              ))}
+            </div>
+            <div className="hero-panel-foot">
+              <ShieldCheck size={18} strokeWidth={1.75} /> Senior engineers on every build, NDA from day one
             </div>
           </div>
         </div>
@@ -122,13 +147,13 @@ export default function Home() {
             <h2>Software Development & AI Automation Services</h2>
             <p>From custom software, web, and mobile development to AI agents and automation - one team covers the full stack.</p>
           </div>
-          <div className="svc-grid">
+          <div className="svc-cards">
             {services.map(s => (
-              <Link key={s.title} to={s.href} className="svc">
-                <img src={`https://images.unsplash.com/photo-${s.img}?w=600&q=80&auto=format`} alt="" loading="lazy" />
-                <div className="ov" />
+              <Link key={s.title} to={s.href} className="svc-card">
+                <span className="ic"><s.ic size={24} strokeWidth={1.75} /></span>
                 <h3>{s.title}</h3>
-                <span className="arr"><ArrowRight size={16} strokeWidth={2} /></span>
+                <p>{s.p}</p>
+                <span className="more">Learn more <ArrowRight size={15} strokeWidth={2} /></span>
               </Link>
             ))}
           </div>
@@ -283,9 +308,10 @@ export default function Home() {
             <h2>Flexible Engagement Models</h2>
             <p>Choose the partnership model that fits your project, timeline, and budget - or mix and match as you scale.</p>
           </div>
-          <div className="eng-grid">
-            {engagements.map(e => (
-              <div key={e.h} className="eng">
+          <div className="eng-steps">
+            {engagements.map((e, i) => (
+              <div key={e.h} className="eng-step">
+                <span className="num">0{i + 1}</span>
                 <div className="ic"><e.ic size={24} strokeWidth={1.75} /></div>
                 <h3>{e.h}</h3>
                 <p>{e.p}</p>
@@ -295,28 +321,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* AWARDS */}
-      <section className="sec">
-        <div className="wrap">
-          <div className="head">
-            <p className="eyebrow orange">Recognition</p>
-            <h2>Awards & Certifications</h2>
-          </div>
-          <div className="awards">
-            {awards.map(a => <div key={a} className="award"><span>{a}</span></div>)}
-          </div>
-        </div>
-      </section>
-
-      {/* PARTNERS */}
+      {/* RECOGNITION & PARTNERS */}
       <section className="sec partners">
         <div className="wrap">
-          <div className="head">
-            <p className="eyebrow" style={{ color: 'var(--orange)' }}>Technology Partners</p>
-            <h2>We Build on Best-in-Class Platforms</h2>
-          </div>
-          <div className="plogos">
-            {partners.map(p => <span key={p} className="pl">{p}</span>)}
+          <div className="trust-split">
+            <div>
+              <p className="eyebrow" style={{ color: 'var(--orange)' }}>Recognition</p>
+              <h2>Awards &amp; Certifications</h2>
+              <div className="award-list">
+                {awards.map(a => <span key={a} className="award-chip"><Award size={16} strokeWidth={1.75} /> {a}</span>)}
+              </div>
+            </div>
+            <div>
+              <p className="eyebrow" style={{ color: 'var(--orange)' }}>Technology Partners</p>
+              <h2>Built on Best-in-Class Platforms</h2>
+              <div className="plogo-grid">
+                {partners.map(p => <span key={p} className="pl">{p}</span>)}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -370,7 +392,6 @@ export default function Home() {
                 </div>
               </div>
               <div className="cinfo">
-                <div><span className="ic"><Mail size={18} strokeWidth={1.75} /></span> <a href={`mailto:${INFO_EMAIL}`}>{INFO_EMAIL}</a></div>
                 <div><span className="ic"><Mail size={18} strokeWidth={1.75} /></span> <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></div>
                 <div><span className="ic"><Phone size={18} strokeWidth={1.75} /></span> +1 (832) 555-0190</div>
                 <div><span className="ic"><MapPin size={18} strokeWidth={1.75} /></span> Coquitlam, Canada - Karachi, Pakistan</div>

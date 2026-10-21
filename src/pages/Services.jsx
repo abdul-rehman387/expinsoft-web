@@ -165,7 +165,7 @@ export default function Services() {
               <p className="eyebrow orange" style={{ marginBottom: 14 }}>What We Do</p>
               <h1>AI, Automation & Software Development Services</h1>
               <p className="lead">
-                From autonomous AI agents and trading bots to full web and mobile platforms - AE Seller
+                From autonomous AI agents and trading bots to full web and mobile platforms - ExpinSoft
                 builds automation and software that scale, perform, and keep working while you sleep.
               </p>
               <div className="pillars">

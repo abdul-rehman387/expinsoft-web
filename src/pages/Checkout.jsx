@@ -48,7 +48,7 @@ export default function Checkout() {
           <div className="order-success">
             <div className="check-ic"><CheckCircle2 size={34} strokeWidth={1.75} /></div>
             <h2>Payment Received - You're All Set!</h2>
-            <p>Thanks for choosing AE Seller. A confirmation has been sent to your inbox and our team will reach out within 24 hours to kick off your <b>{order.plan}</b> project.</p>
+            <p>Thanks for choosing ExpinSoft. A confirmation has been sent to your inbox and our team will reach out within 24 hours to kick off your <b>{order.plan}</b> project.</p>
             <div className="order-ref">
               <span>Reference</span>
               <b>{order.reference}</b>
@@ -68,7 +68,7 @@ export default function Checkout() {
                 <div className="order-line plan-line">
                   <div>
                     <b>{planName} Plan</b>
-                    <span>AE Seller development package</span>
+                    <span>ExpinSoft development package</span>
                   </div>
                   <b>${price.toLocaleString()}</b>
                 </div>

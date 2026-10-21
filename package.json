@@ -1,5 +1,5 @@
 {
-  "name": "ae-seller-webapps",
+  "name": "expinsoft-webapps",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,14 +9,15 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test:seo": "node scripts/seo-check.mjs",
-    "check": "npm run lint && npm run build && npm run test:seo"
+    "test:lead": "node --test test/lead.test.js",
+    "check": "npm run lint && npm run test:lead && npm run build && npm run test:seo"
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^10.1.2",
     "@stripe/react-stripe-js": "^6.7.0",
     "@stripe/stripe-js": "^9.9.0",
-    "firebase": "^13.0.0",
     "lucide-react": "^1.30.0",
+    "nodemailer": "^7.0.13",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-router-dom": "^7.18.0"

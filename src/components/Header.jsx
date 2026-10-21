@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import logo from '../assets/AE-Seller-Logo.png'
+import logo from '../assets/ExpinSoft-Logo.png'
 import QuoteModal from './QuoteModal'
 
 const megaLinks = [
@@ -121,7 +121,7 @@ export default function Header() {
       <div className="wrap">
         <nav className="nav">
           <Link to="/" className="logo">
-            <img src={logo} alt="AE Seller" width="356" height="107" />
+            <img src={logo} alt="ExpinSoft" width="480" height="118" />
           </Link>
 
           <div className={`menu${menuOpen ? ' open' : ''}`}>
@@ -141,7 +141,6 @@ export default function Header() {
             <Link to="/technologies" className={isActive('/technologies')}>Technologies</Link>
             <Link to="/insights" className={isActive('/insights')}>Insights</Link>
             <Link to="/portfolio" className={isActive('/portfolio')}>Portfolio</Link>
-            <Link to="/about" className={isActive('/about')}>About Us</Link>
             <button className="btn btn-sm hide-mobile" style={{marginLeft:8}} onClick={() => setQuoteOpen(true)}>Get a Quote</button>
             <button className="btn mobile-cta" onClick={() => setQuoteOpen(true)}>Get a Quote</button>
           </div>
@@ -165,7 +164,7 @@ export default function Header() {
           <div className="mega-inner">
             <div className="mega-promo">
               <h3>Put AI to Work</h3>
-              <p>AE Seller builds AI agents, bots, and automations that run your operations around the clock.</p>
+              <p>ExpinSoft builds AI agents, bots, and automations that run your operations around the clock.</p>
               <img
                 src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=480&q=80&auto=format"
                 alt=""

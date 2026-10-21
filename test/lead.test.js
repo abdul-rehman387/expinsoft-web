@@ -1,7 +1,7 @@
-// Unit tests for lead validation and email formatting. Run: npm test
-const test = require("node:test");
-const assert = require("node:assert/strict");
-const {validate, formatEmail} = require("../lib/lead.js");
+// Unit tests for lead validation and email formatting. Run: npm run test:lead
+import test from "node:test";
+import assert from "node:assert/strict";
+import {validate, formatEmail} from "../api/_lib/lead.js";
 
 const base = {
   form: "contact", name: "Jane Doe", email: "jane@example.com",

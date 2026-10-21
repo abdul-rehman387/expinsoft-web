@@ -1,18 +1,18 @@
 // Checks the LIVE site's crawl behaviour: status codes, redirects, robots.txt,
 // sitemap, canonicals, and legacy URL handling. Read-only (GET/HEAD requests).
-//   node scripts/seo-live-check.mjs                     # https://aeseller.com
-//   node scripts/seo-live-check.mjs https://ae-seler.web.app
+//   node scripts/seo-live-check.mjs                     # https://expinsoft.com
+//   node scripts/seo-live-check.mjs https://<project>.vercel.app
 import { appendFileSync } from 'node:fs'
 
-const base = (process.argv[2] || 'https://aeseller.com').replace(/\/$/, '')
-const isProd = base === 'https://aeseller.com'
+const base = (process.argv[2] || 'https://expinsoft.com').replace(/\/$/, '')
+const isProd = base === 'https://expinsoft.com'
 const results = []
 const record = (ok, check, detail = '') => results.push({ ok, check, detail })
 
 // Network failures become status 0 (a failed check) instead of aborting the run.
 async function get(url) {
   try {
-    const res = await fetch(url.startsWith('http') ? url : base + url, { redirect: 'manual', headers: { 'user-agent': 'aeseller-seo-check/1.0' } })
+    const res = await fetch(url.startsWith('http') ? url : base + url, { redirect: 'manual', headers: { 'user-agent': 'expinsoft-seo-check/1.0' } })
     return { status: res.status, location: res.headers.get('location'), type: res.headers.get('content-type') || '', xrobots: res.headers.get('x-robots-tag') || '', body: await res.text() }
   } catch (e) {
     return { status: 0, location: `network error: ${e.cause?.code || e.message}`, type: '', xrobots: '', body: '' }
@@ -29,7 +29,7 @@ const expectStatus = async (path, expected, label) => {
 // robots.txt and sitemap must be real files, not the SPA shell
 const robots = await get('/robots.txt')
 record(robots.status === 200 && robots.type.startsWith('text/plain'), 'robots.txt served as text/plain', `${robots.status} ${robots.type}`)
-record(/Sitemap:\s*https:\/\/aeseller\.com\/sitemap\.xml/i.test(robots.body), 'robots.txt references sitemap')
+record(/Sitemap:\s*https:\/\/expinsoft\.com\/sitemap\.xml/i.test(robots.body), 'robots.txt references sitemap')
 
 const sm = await get('/sitemap.xml')
 const locs = [...sm.body.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1])
@@ -58,9 +58,9 @@ await expectStatus('/insights/not-a-real-article', 404, 'unknown article returns
 await expectStatus('/services/', [301, 308], 'trailing slash redirects')
 await expectStatus('/services.html', [301, 308], '.html redirects to clean URL')
 if (isProd) {
-  const www = await get('https://www.aeseller.com/')
-  record([301, 308].includes(www.status) && (www.location || '').startsWith('https://aeseller.com'), 'www redirects to apex', `got ${www.status} -> ${www.location}`)
-  const http = await get('http://aeseller.com/')
+  const www = await get('https://www.expinsoft.com/')
+  record([301, 308].includes(www.status) && (www.location || '').startsWith('https://expinsoft.com'), 'www redirects to apex', `got ${www.status} -> ${www.location}`)
+  const http = await get('http://expinsoft.com/')
   record([301, 308].includes(http.status), 'http redirects to https', `got ${http.status}`)
 }
 

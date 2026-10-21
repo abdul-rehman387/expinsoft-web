@@ -5,14 +5,14 @@
 //
 // Env:
 //   GSC_CREDENTIALS  path to the service-account JSON key (never commit it)
-//   GSC_SITE         property, default "sc-domain:aeseller.com" (use "https://aeseller.com/" for a URL-prefix property)
+//   GSC_SITE         property, default "sc-domain:expinsoft.com" (use "https://expinsoft.com/" for a URL-prefix property)
 //   GSC_DAYS         comparison window in days, default 28
 // Writes seo-reports/gsc-YYYY-MM-DD.md and .json. Uses only documented Search Console
 // API endpoints (searchAnalytics.query, sitemaps.list, urlInspection.index.inspect).
 import { createSign } from 'node:crypto'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 
-const SITE = process.env.GSC_SITE || 'sc-domain:aeseller.com'
+const SITE = process.env.GSC_SITE || 'sc-domain:expinsoft.com'
 const DAYS = Number(process.env.GSC_DAYS || 28)
 const INSPECT = process.argv.includes('--inspect')
 const keyFile = process.env.GSC_CREDENTIALS
@@ -84,7 +84,7 @@ const sitemaps = (await api(`https://searchconsole.googleapis.com/webmasters/v3/
 let inspections = []
 if (INSPECT) {
   // URL Inspection API is quota-limited (2,000/day per property); sitemap URLs only.
-  const xml = await (await fetch('https://aeseller.com/sitemap.xml')).text()
+  const xml = await (await fetch('https://expinsoft.com/sitemap.xml')).text()
   const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1])
   for (const url of urls) {
     const r = await api('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', { inspectionUrl: url, siteUrl: SITE })

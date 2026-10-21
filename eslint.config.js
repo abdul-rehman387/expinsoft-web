@@ -5,8 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  // functions/ and dataconnect output are Firebase-generated with their own tooling.
-  globalIgnores(['dist', 'dist-ssr', 'functions', 'src/dataconnect-generated']),
+  globalIgnores(['dist', 'dist-ssr']),
   {
     files: ['**/*.{js,jsx}'],
     extends: [
@@ -18,5 +17,10 @@ export default defineConfig([
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
+  },
+  // Vercel Serverless Functions and their tests run on Node.
+  {
+    files: ['api/**/*.js', 'test/**/*.js'],
+    languageOptions: { globals: globals.node },
   },
 ])
