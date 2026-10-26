@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, DollarSign, Palette, RefreshCw, Zap } from 'lucide-react'
 
 const benefits = [
@@ -138,12 +137,6 @@ export default function CrossPlatformApps() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Cross-Platform App Investment Plans"
-        subtitle="Transparent packages for shared-codebase apps - from a lightweight MVP to a full enterprise build. Every project starts with a free discovery call."
-        gray={false}
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

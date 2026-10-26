@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { Activity, ArrowRight, Cpu, Network, Server } from 'lucide-react'
 
 const capabilities = [
@@ -141,11 +140,6 @@ export default function MiningNodeTools() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Mining & Node Tooling Plans"
-        subtitle="From a monitoring dashboard to fully automated node fleets. Every engagement starts with a free infrastructure review."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

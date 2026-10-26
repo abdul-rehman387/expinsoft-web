@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { Archive, ArrowRight, Puzzle, RefreshCw, TrendingUp } from 'lucide-react'
 
 const capabilities = [
@@ -141,11 +140,6 @@ export default function NodeJsDevelopment() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Node.js Development Investment Plans"
-        subtitle="Transparent packages for single APIs, event-driven services, and full backend platforms. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

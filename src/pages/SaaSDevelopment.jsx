@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, BarChart3, Building2, CreditCard, KeyRound } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function SaaSDevelopment() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="SaaS Development Investment Plans"
-        subtitle="Transparent packages for SaaS builds - from a billing-ready MVP to a full multi-tenant platform. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

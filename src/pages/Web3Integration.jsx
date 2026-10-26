@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, CreditCard, Lock, Satellite, Wallet } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function Web3Integration() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Web3 Integration Investment Plans"
-        subtitle="Transparent packages for wallet integration, token-gating, and full Web3 front-ends. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

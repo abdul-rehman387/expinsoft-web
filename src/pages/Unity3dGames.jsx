@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, DollarSign, Gamepad2, Palette, Smartphone } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function Unity3dGames() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Unity Game Development Investment Plans"
-        subtitle="Transparent packages for prototypes, full game builds, and live-ops support. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

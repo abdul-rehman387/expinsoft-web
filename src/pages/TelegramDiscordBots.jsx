@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Bell, Bot, ShieldCheck, Users } from 'lucide-react'
 
 const capabilities = [
@@ -141,11 +140,6 @@ export default function TelegramDiscordBots() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Bot Development Plans"
-        subtitle="From a single-purpose alert bot to a full community platform. Every engagement starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

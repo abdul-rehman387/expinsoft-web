@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import TrustpilotSlider from '../components/TrustpilotSlider'
 
 const CATEGORIES = ['all','corporate','ecommerce','education','logistics','saas','cloud']
@@ -176,8 +175,6 @@ export default function Portfolio() {
           <TrustpilotSlider />
         </div>
       </section>
-
-      <PricingSection />
 
       <div className="clientele">
         <div className="wrap">

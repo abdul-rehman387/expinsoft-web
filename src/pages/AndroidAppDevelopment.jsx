@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Bell, CreditCard, Layers, MapPin, Rocket, ShieldCheck, Smartphone, Sparkles } from 'lucide-react'
 
 const capabilities = [
@@ -187,11 +186,6 @@ export default function AndroidAppDevelopment() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Android App Development Plans"
-        subtitle="From a focused Android MVP to a full enterprise deployment. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, BarChart3, Bird, Wrench, Zap } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function DevOpsCiCd() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="DevOps & CI/CD Investment Plans"
-        subtitle="Transparent packages for pipeline builds, migration from manual releases, and ongoing DevOps support. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

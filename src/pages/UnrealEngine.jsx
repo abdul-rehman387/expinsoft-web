@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Globe, Monitor, Puzzle, Target } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function UnrealEngine() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Unreal Engine Investment Plans"
-        subtitle="Transparent packages for prototypes, full production builds, and multiplayer infrastructure. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Bell, Camera, Compass, WifiOff } from 'lucide-react'
 
 const capabilities = [
@@ -140,12 +139,6 @@ export default function ReactNativeApps() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="React Native App Investment Plans"
-        subtitle="Transparent packages for React Native builds - from a lightweight MVP to a full enterprise app. Every project starts with a free discovery call."
-        gray={false}
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

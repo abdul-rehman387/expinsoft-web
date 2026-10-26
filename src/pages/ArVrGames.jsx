@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Glasses, Hand, Smartphone, Target } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function ArVrGames() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="AR/VR Game Investment Plans"
-        subtitle="Transparent packages for prototypes, full immersive builds, and multi-headset support. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

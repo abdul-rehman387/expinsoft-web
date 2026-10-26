@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Hammer, Plug, Repeat, Shield } from 'lucide-react'
 
 const capabilities = [
@@ -141,11 +140,6 @@ export default function ApiIntegration() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="API Integration Investment Plans"
-        subtitle="Transparent packages for single integrations, multi-platform sync layers, and full public API builds. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

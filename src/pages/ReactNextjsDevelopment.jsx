@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Atom, Lock, Search, Zap } from 'lucide-react'
 
 const capabilities = [
@@ -141,11 +140,6 @@ export default function ReactNextjsDevelopment() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="React & Next.js Investment Plans"
-        subtitle="Transparent packages for landing pages, dashboards, and full-scale web applications. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

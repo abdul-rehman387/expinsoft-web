@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Droplet, Landmark, Monitor, TrendingUp } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function DefiPlatforms() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="DeFi Platform Investment Plans"
-        subtitle="Transparent packages for protocol MVPs, full platform builds, and ongoing audits. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

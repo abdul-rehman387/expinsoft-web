@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, ChartLine, Gauge, KeyRound, Shield } from 'lucide-react'
 
 const capabilities = [
@@ -145,11 +144,6 @@ export default function CryptoTradingBots() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Trading Bot Development Plans"
-        subtitle="From a single-exchange strategy bot to a multi-venue execution platform. Every engagement starts with a free strategy review."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, FileText, Repeat, Sparkles, Webhook } from 'lucide-react'
 
 const capabilities = [
@@ -141,11 +140,6 @@ export default function WorkflowAutomation() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Workflow Automation Plans"
-        subtitle="Start with one high-impact workflow or automate an entire department. Every engagement starts with a free process audit."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Bot, Building, CheckCircle2, Code2, DollarSign, Gamepad2, Globe, HeartPulse, Lock, Medal, Phone, RefreshCw, Rocket, Shield, ShoppingCart, Smartphone, Star, TrendingUp } from 'lucide-react'
 
 const trustBrands = ['MOBIUS','KINDER MORGAN','UTMB','WORLD COOP','camh','SAUDI BELL']
@@ -308,11 +307,6 @@ export default function MobileApp() {
           </div>
         </div>
       </section>
-
-      <PricingSection
-        title="Mobile App Investment Plans"
-        subtitle="From a lightweight MVP to a full-scale enterprise app - transparent packages with no hidden fees. Every project starts with a free discovery call."
-      />
 
       {/* CTA */}
       <section className="sec" style={{ paddingTop: 0 }}>

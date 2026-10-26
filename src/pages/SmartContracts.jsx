@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Fuel, Link2, ScrollText, Search } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function SmartContracts() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Smart Contract Investment Plans"
-        subtitle="Transparent packages for single contracts, full protocol builds, and security audits. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

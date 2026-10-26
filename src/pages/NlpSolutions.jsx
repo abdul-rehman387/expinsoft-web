@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Globe, MessageSquare, Search, Tag } from 'lucide-react'
 
 const capabilities = [
@@ -141,11 +140,6 @@ export default function NlpSolutions() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="NLP Solutions Investment Plans"
-        subtitle="Transparent packages for chatbots, document intelligence, and semantic search builds. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

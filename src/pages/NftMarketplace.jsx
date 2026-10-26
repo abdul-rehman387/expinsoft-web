@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Briefcase, Palette, RefreshCw, Store } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function NftMarketplace() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="NFT Marketplace Investment Plans"
-        subtitle="Transparent packages for minting sites, full marketplaces, and creator tooling. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

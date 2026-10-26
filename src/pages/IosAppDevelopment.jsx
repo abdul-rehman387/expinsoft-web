@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Bell, CreditCard, Rocket, ShieldCheck, Smartphone, Sparkles, Tablet, Watch } from 'lucide-react'
 
 const capabilities = [
@@ -187,11 +186,6 @@ export default function IosAppDevelopment() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="iOS App Development Plans"
-        subtitle="From a focused iPhone MVP to a full Apple-ecosystem product. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

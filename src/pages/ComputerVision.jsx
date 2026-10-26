@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Camera, Factory, FileText, Settings } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function ComputerVision() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Computer Vision Investment Plans"
-        subtitle="Transparent packages for detection pilots, production-line integration, and full edge deployment. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

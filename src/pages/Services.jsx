@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight } from 'lucide-react'
 import webDesignImg from '../assets/web-design.jpg'
 import webDevImg from '../assets/digital-idea.jpg'
@@ -247,8 +246,6 @@ export default function Services() {
           </div>
         </div>
       </section>
-
-      <PricingSection />
 
       {/* CTA */}
       <section className="sec" style={{ paddingTop: 0 }}>

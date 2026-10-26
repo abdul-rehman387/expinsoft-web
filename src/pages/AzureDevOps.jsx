@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Building2, ClipboardList, Repeat, Shield } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function AzureDevOps() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Azure DevOps Investment Plans"
-        subtitle="Transparent packages for pipeline builds, migrations, and ongoing DevOps support. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

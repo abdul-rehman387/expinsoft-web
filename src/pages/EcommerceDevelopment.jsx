@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, BarChart3, CreditCard, Package, ShoppingCart } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function EcommerceDevelopment() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="E-Commerce Investment Plans"
-        subtitle="Transparent packages for storefront builds, platform migrations, and checkout optimization. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

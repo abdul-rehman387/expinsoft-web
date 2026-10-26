@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, BrainCircuit, Database, MessageSquare, Plug } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function AiAgentsChatbots() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="AI Agent & Chatbot Plans"
-        subtitle="From a single website chatbot to a fleet of autonomous agents. Every engagement starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

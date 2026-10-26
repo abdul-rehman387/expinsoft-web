@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Cloud, Link2, RefreshCw, Search } from 'lucide-react'
 
 const capabilities = [
@@ -141,11 +140,6 @@ export default function LegacyModernization() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Legacy Modernization Investment Plans"
-        subtitle="Transparent packages for audits, phased migrations, and full re-platforming - scoped around your risk tolerance and timeline. Every engagement starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

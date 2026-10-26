@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Building, Link2, Lock, Settings } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function EnterpriseSoftware() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="Enterprise Software Investment Plans"
-        subtitle="Transparent packages for internal tools, ERPs, and multi-tenant platforms - from a focused module to a full enterprise build. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

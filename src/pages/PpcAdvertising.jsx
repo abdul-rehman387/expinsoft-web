@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, DollarSign, FlaskConical, Target, TrendingUp } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function PpcAdvertising() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="PPC Advertising Investment Plans"
-        subtitle="Transparent packages for campaign setup, ongoing management, and conversion tracking rebuilds. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">

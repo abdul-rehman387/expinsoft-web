@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import ConsultForm from '../components/ConsultForm'
-import PricingSection from '../components/PricingSection'
 import { ArrowRight, Blocks, Globe, PenLine, Zap } from 'lucide-react'
 
 const capabilities = [
@@ -140,11 +139,6 @@ export default function CmsSolutions() {
           </div>
         </div>
       </div>
-
-      <PricingSection
-        title="CMS Solutions Investment Plans"
-        subtitle="Transparent packages for CMS integration, migration, and multi-language content builds. Every project starts with a free discovery call."
-      />
 
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">
